@@ -6,6 +6,8 @@ out/
 .idea/**/modules.xml
 .idea/**/vcs.xml
 .idea/**/workspace.xml
+.idea/
+SwingDemo.iml
 
 ### Eclipse ###
 .apt_generated
@@ -52,3 +54,6 @@ bin/
 *.zip
 *.tar.gz
 *.rar
+
+#md File
+*.md
