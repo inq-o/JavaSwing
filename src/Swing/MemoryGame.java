@@ -83,14 +83,16 @@ public class MemoryGame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if (firstFlipped != -1 && secondFlipped != -1) {
                     if (!cardValues[firstFlipped].name.equals(cardValues[secondFlipped].name)) {
-                        // If two cards are not matched, flip all
+                        // 두 카드가 일치하지 않는 경우 다시 뒤집기
                         buttons[firstFlipped].setText("");
                         buttons[secondFlipped].setText("");
+                        cardFlipped[firstFlipped] = false;
+                        cardFlipped[secondFlipped] = false;
+                    } else {
+                        // 두 카드가 일치할 때만 isFlipped 상태를 true로 설정
+                        cardValues[firstFlipped].isFlipped = true;
+                        cardValues[secondFlipped].isFlipped = true;
                     }
-                    cardFlipped[firstFlipped] = false;
-                    cardValues[firstFlipped].isFlipped = true;
-                    cardFlipped[secondFlipped] = false;
-                    cardValues[secondFlipped].isFlipped = true;
                     flippedCount = 0;
                     firstFlipped = -1;
                     secondFlipped = -1;
